@@ -11,9 +11,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("catalog app"),
-      ),
-      body: Center(
-        child:Container( 
+        centerTitle: true,
+        backgroundColor: Colors.deepPurpleAccent,
+      ),//used to changethe app middle settings like colurs etc.
+
+
+        body: Center(
+           child:Container( 
           
             child: Text("Welcome to $days Days of Flutter by $name name"),
           ),
