@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:flutter_catalog/widgets/theme.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -14,12 +16,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       //home:HomePage(),
-      themeMode: ThemeMode.dark,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      darkTheme: ThemeData(
-          brightness: Brightness.light, primarySwatch: Colors.deepOrange),
+      themeMode: ThemeMode.light,
+      theme: MyTheme.LightthemeData(context),
+      darkTheme:MyTheme.darkTheme(context),
 
            debugShowCheckedModeBanner: false,
        initialRoute: MyRoutes.homeRoute,

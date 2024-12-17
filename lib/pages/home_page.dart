@@ -13,9 +13,10 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("catalog app"),
+        backgroundColor:Colors.white,
+        title: Text("Portfolio App",),
         centerTitle: true,
-        backgroundColor: Colors.deepPurpleAccent,
+       
       ),//used to changethe app middle settings like colurs etc.
 
 
