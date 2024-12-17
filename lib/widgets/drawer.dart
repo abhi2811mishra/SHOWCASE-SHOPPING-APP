@@ -5,7 +5,7 @@ class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
   @override
-  Widget build(BuildContext COntext) {
+  Widget build(BuildContext context) {
     final imageurl =
      "https://thumbs.dreamstime.com/b/holding-hands-against-bright-sun-light-rays-nature-landscape-sunset-blue-sky-yellow-burst-flare-birds-silhouettes-flying-169480456.jpg";
 
