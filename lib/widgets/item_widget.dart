@@ -13,7 +13,7 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.blue,
+      color: Colors.white,
       shape: StadiumBorder(),
       child: ListTile(
         onTap: () {

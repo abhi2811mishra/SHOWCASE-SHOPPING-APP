@@ -1,0 +1,83 @@
+{
+    "products":[
+        {
+            "id":1,
+            "name":"apple",
+            "description": "fresh",
+            "price": 5,
+            "color": "#FF0000",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkkHvVGKA9Ofr5uH9exGOxEJ94rLwcJs1mQ&s"
+            
+        },
+
+        {
+            "id":2,
+            "name":"apple Iphone 16",
+            "description": "iphone 16 pro max pink color body",
+            "price": 999,
+            "color": "#000000",
+            "image": "https://i.insider.com/66ed6324cfb7f307e5735cbe?width=1200&format=jpeg"
+        },
+
+        {
+            "id":3,
+            "name":" Apple Airpods pro",
+            "description": "2nd Generation-USB C TWS Earbuds with Active Noise Cancellation (IP54 Water Resistant, MagSafe Case, White)",
+            "price": 499,
+            "color": "#FF5733",
+            "image": "https://5.imimg.com/data5/SELLER/Default/2021/1/TP/QP/BR/8819839/new-product-500x500.jpeg"
+        },
+
+
+        {
+            "id":4,
+            "name":"Apple 2024 MacBook Pro Laptop",
+            "description": " M4 Max chip with 14‑core CPU and 32‑core GPU: Built for Apple Intelligence, (16.2″) Liquid Retina XDR Display, 36GB Unified Memory, 1TB SSD Storage; Space Black",
+            "price": 1599,
+            "color": "#C0C0C0",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9nmINS9pyz3SDqG1AG16yMf8OGYN8F9LqA&s"
+        },
+
+        {
+          "id":5,
+            "name":"Samsung Galaxy S24 Ultra",
+            "description": " 5G AI Smartphone (Titanium Gray, 12GB, 256GB Storage)",
+            "price": 999,
+            "color": "#FFA500",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2QAxxk-ONOq7jSfQ0dfSqwSErFI1iMxruKQ&s"
+            
+        },
+
+            {
+            "id":6,
+            "name":"Samsung Galaxy Z Flip6",
+            "description": " 5G AI Smartphone (Mint, 12GB RAM, 256GB Storage)",
+            "price": 849,
+            "color": "#006400",
+            "image": "https://images.samsung.com/uk/smartphones/galaxy-z-flip6/buy/03_Color-Selection/03-1_Basic-Color/Color-Selection_Mint-PC.png"
+            
+             },
+
+             {
+                "id":7,
+            "name":"HP Envy x360 2-in-1 Laptop",
+            "description": "12th Gen Intel core i7-1255U 15.6inch(39.6cm) FHD 500 Nits OLED Tochscreen(16GB RAM 1TB SSD B&O Intel Iris Xe Graphics Win11/MSO Pen",
+            "price": 1999,
+            "color": "#4B0082",
+            "image": "https://static1.industrybuying.com/products/it-electronics/laptops/ITE.LAP.77282048_1717561325832.webp"
+            
+             },
+
+             {
+            "id":9,
+            "name":"apple Iphone 15",
+            "description": "512Gb",
+            "price": 599,
+            "color": "#FF0000",
+            "image": "https://m.media-amazon.com/images/I/71d7rfSl0wL._SL1500_.jpg"
+
+
+
+             }
+        ]
+}
