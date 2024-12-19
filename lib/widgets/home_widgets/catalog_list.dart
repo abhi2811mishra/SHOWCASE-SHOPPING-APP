@@ -65,6 +65,13 @@ class CatlogItem extends StatelessWidget {
                         backgroundColor:
                             WidgetStateProperty.all(Colors.deepPurple)),
                   ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: "Add to Cart".text.color(MyTheme.creamColor).make(),
+                    style: ButtonStyle(
+                        backgroundColor:
+                            WidgetStateProperty.all(Colors.deepPurple)),
+                  ),
                 ],
               )
             ],
