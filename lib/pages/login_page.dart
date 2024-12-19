@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -104,6 +106,11 @@ class _LoginPageState extends State<LoginPage> {
                           width: changeButton ? 50 : 150,
                           height: 50,
                           alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius:
+                                BorderRadius.circular(changeButton ? 50 : 8),
+                          ),
                           child: changeButton
                               ? Icon(
                                   Icons.done,
@@ -116,11 +123,6 @@ class _LoginPageState extends State<LoginPage> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18),
                                 ),
-                          decoration: BoxDecoration(
-                            color: Colors.deepPurple,
-                            borderRadius:
-                                BorderRadius.circular(changeButton ? 50 : 8),
-                          ),
                         ),
                       ),
 

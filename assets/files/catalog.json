@@ -32,7 +32,7 @@
         {
             "id":4,
             "name":"Apple 2024 MacBook Pro Laptop",
-            "description": " M4 Max chip with 14‑core CPU and 32‑core GPU: Built for Apple Intelligence, (16.2″) Liquid Retina XDR Display, 36GB Unified Memory, 1TB SSD Storage; Space Black",
+            "description": " M4 Max chip with 14‑core CPU and 32‑core GPU: Built for Apple Intelligence",
             "price": 1599,
             "color": "#C0C0C0",
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9nmINS9pyz3SDqG1AG16yMf8OGYN8F9LqA&s"
@@ -61,7 +61,7 @@
              {
                 "id":7,
             "name":"HP Envy x360 2-in-1 Laptop",
-            "description": "12th Gen Intel core i7-1255U 15.6inch(39.6cm) FHD 500 Nits OLED Tochscreen(16GB RAM 1TB SSD B&O Intel Iris Xe Graphics Win11/MSO Pen",
+            "description": "12th Gen Intel core i7-1255U16GB RAM 1TB SSD B&O Intel Iris Xe Graphics",
             "price": 1999,
             "color": "#4B0082",
             "image": "https://static1.industrybuying.com/products/it-electronics/laptops/ITE.LAP.77282048_1717561325832.webp"
@@ -69,7 +69,7 @@
              },
 
              {
-            "id":9,
+            "id":8,
             "name":"apple Iphone 15",
             "description": "512Gb",
             "price": 599,
