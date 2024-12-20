@@ -51,13 +51,14 @@ class CatlogItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
+            
             children: [
-              catalog.name.text.bold.lg.color(MyTheme.darkBluishColor).make(),
-              catalog.description.text.textStyle(context.captionStyle).make(),
+              catalog.name.text.bold.lg.color(Theme.of(context).colorScheme.primary).make(),
+              catalog.description.text.textStyle(context.captionStyle).color(Theme.of(context).colorScheme.primary).make(),
               OverflowBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  "\$${catalog.price}".text.bold.xl.make(),
+                  "\$${catalog.price}".text.bold.xl.make().color(Theme.of(context).colorScheme.primary),
                   ElevatedButton(
                     onPressed: () {},
                     child: "Buy".text.color(MyTheme.creamColor).make(),
@@ -78,6 +79,6 @@ class CatlogItem extends StatelessWidget {
           ),
         )
       ],
-    )).white.rounded.square(150).make();
+    )).color(context.cardColor).rounded.square(150).make();
   }
 }

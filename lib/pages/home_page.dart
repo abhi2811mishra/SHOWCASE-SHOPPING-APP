@@ -22,6 +22,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  get elevatedButtonTheme => null;
+
   @override
   void initState() {
     super.initState();
@@ -46,11 +48,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
 
 
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor:context.canvasColor,
         floatingActionButton: FloatingActionButton(
         onPressed:()=>Navigator.pushNamed(context,MyRoutes.cartRoute),
-        backgroundColor: Colors.deepPurple,
-        child: Icon(CupertinoIcons.cart,color: MyTheme.creamColor,),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+       child: Icon(CupertinoIcons.cart,color: MyTheme.creamColor,),
         ),
 
 
@@ -74,6 +76,8 @@ class _HomePageState extends State<HomePage> {
         );
   }
 }
+
+
 
 
 

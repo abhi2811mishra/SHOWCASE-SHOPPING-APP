@@ -1,6 +1,6 @@
 
 
-// ignore_for_file: use_super_parameters
+// ignore_for_file: use_super_parameters, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/widgets/theme.dart';
@@ -16,7 +16,7 @@ class CatalogImage extends StatelessWidget {
             .box
             .roundedSM
             .p16
-            .color(MyTheme.creamColor)
+            .color(context.canvasColor)
             .make()
             .w40(context);
   }
