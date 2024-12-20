@@ -16,9 +16,9 @@ class HomeDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent,),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.teal,
+        color: context.cardColor,
                   child: OverflowBar(
                   alignment: MainAxisAlignment.spaceBetween,
                   children: [

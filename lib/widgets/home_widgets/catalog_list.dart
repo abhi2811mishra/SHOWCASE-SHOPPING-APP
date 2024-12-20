@@ -14,11 +14,13 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.items[index];
+        final catalog = CatalogModel.getByPosition(index);
         return InkWell(
           onTap: () => Navigator.push(context,
-           MaterialPageRoute(builder
-           : (context)=>HomeDetailsPage(catalog: catalog)
+           MaterialPageRoute(
+            builder : (context)=>HomeDetailsPage(
+              catalog: catalog
+              )
            )
            ),
 
@@ -58,7 +60,7 @@ class CatlogItem extends StatelessWidget {
               OverflowBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  "\$${catalog.price}".text.bold.xl.make().color(Theme.of(context).colorScheme.primary),
+                  "\$${catalog.price}".text.bold.xl.make().color(Theme.of(context).colorScheme.secondary),
                   ElevatedButton(
                     onPressed: () {},
                     child: "Buy".text.color(MyTheme.creamColor).make(),

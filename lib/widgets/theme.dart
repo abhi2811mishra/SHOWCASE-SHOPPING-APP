@@ -5,27 +5,22 @@ import 'package:velocity_x/velocity_x.dart';
 class MyTheme {
   // ignore: non_constant_identifier_names
   static ThemeData LightthemeData(BuildContext context) => ThemeData(
-       colorScheme: ColorScheme.fromSwatch(
-        primarySwatch: Colors.blue, // Base swatch (replace with an existing swatch)
-      ).copyWith(
-        primary: lightBluishColor, // Replace with your custom color
-        secondary: darkBluishColor, // Secondary color for buttons, etc.
-      ),
-      
+   // brightness: Brightness.light,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch:
+              Colors.blue, // Base swatch (replace with an existing swatch)
+        ).copyWith(
+          primary: darkBluishColor, // Replace with your custom color
+          secondary: lightBluishColor, // Secondary color for buttons, etc.
+        ),
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: Colors.white,
         canvasColor: creamColor,
-        
         elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: lightBluishColor, // Set button background color
-    ),
-  ),
-          
-         
-        
-      
-         
+          style: ElevatedButton.styleFrom(
+            backgroundColor: lightBluishColor, // Set button background color
+          ),
+        ),
         appBarTheme: AppBarTheme(
           color: Colors.white,
           elevation: 0.0,
@@ -39,32 +34,33 @@ class MyTheme {
       );
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
-         
-        colorScheme: ColorScheme.fromSwatch(
-        primarySwatch: Colors.blue, // Base swatch (replace with an existing swatch)
-      ).copyWith(
-        primary: lightBluishColor, // Replace with your custom color
-        secondary: Colors.white, // Secondary color for buttons, etc.
-      ),
-      
+        //brightness: Brightness.dark,
+         colorScheme: ColorScheme.fromSwatch(
+          primarySwatch:
+              Colors.blue, // Base swatch (replace with an existing swatch)
+        ).copyWith(
+          primary: Colors.white, // Replace with your custom color
+          secondary:lightBluishColor, // Secondary color for buttons, etc.
+        ),
         fontFamily: GoogleFonts.poppins().fontFamily,
-        cardColor: Colors.white,
+        cardColor: Colors.black,
         canvasColor: darkcreamColor,
-         elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: lightBluishColor, // Set button background color
-    ),
-  ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: lightBluishColor, // Set button background color
+          ),
+        ),
         appBarTheme: AppBarTheme(
           color: Colors.black,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: Colors.white),
           titleTextStyle: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 40, // Font size
             fontWeight: FontWeight.bold,
           ),
         ),
+
       );
 
 //colors
