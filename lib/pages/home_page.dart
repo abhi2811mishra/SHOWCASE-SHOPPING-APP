@@ -22,61 +22,53 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  get elevatedButtonTheme => null;
-
   @override
   void initState() {
     super.initState();
     loadData();
   }
 
-  loadData() async {
-    final catalogJson =
-        await rootBundle.loadString("assets/files/catalog.json");
-    final decodedData = jsonDecode(catalogJson);
-    var productData = decodedData["products"];
+  Future<void> loadData() async {
+    try {
+      final catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+      final decodedData = jsonDecode(catalogJson)["products"];
+      CatalogModel.items = List.from(decodedData).map<Item>((item) => Item.fromMap(item)).toList();
 
-    CatalogModel.items =
-        List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
-
-    setState(() {});
+      setState(() {});
+    } catch (e) {
+      print("Error: $e");
+    }
   }
 
-  // const HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
-        backgroundColor:context.canvasColor,
-        floatingActionButton: FloatingActionButton(
-        onPressed:()=>Navigator.pushNamed(context,MyRoutes.cartRoute),
-        backgroundColor:Theme.of(context).colorScheme.secondary,
-       child: Icon(CupertinoIcons.cart,color: Colors.white,),
-        ),
-
-
-
-        body: SafeArea(
-          child: Container(
-            padding: Vx.m32,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CatalogHeader(),
-                if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                  CatalogList().p16().expand()
-                else
-                   CircularProgressIndicator().centered().expand(),
-                  
-              ],
-            ),
+      backgroundColor: Theme.of(context).canvasColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        child: const Icon(CupertinoIcons.cart, color: Colors.white),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CatalogHeader(),
+              const SizedBox(height: 16),
+              Expanded(
+                child: CatalogModel.items.isNotEmpty
+                    ? CatalogList()
+                    : const Center(child: CircularProgressIndicator()),
+              ),
+            ],
           ),
-        )
-        );
+        ),
+      ),
+    );
   }
 }
-
 
 
 
