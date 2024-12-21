@@ -66,7 +66,8 @@ class _CartListState extends State<_CartList> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+
+    return _cart.items.isEmpty?"Nothing to Show.".text.xl3.bold.makeCentered(): ListView.builder(
       itemCount: _cart.items.toList().length,
       itemBuilder: (context, index) {
         final item = _cart.items.toList()[index]; // Convert items to a List for indexing
@@ -76,8 +77,10 @@ class _CartListState extends State<_CartList> {
             icon: Icon(Icons.remove_circle_outline,color: Theme.of(context).colorScheme.secondary ,),
             onPressed: () {
               setState(() {
-                _cart.remove(item); // Remove item from cart
-              });
+                _cart.remove(item); 
+                setState(() {});// Remove item from cart
+              }
+              );
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: '${item.name} removed from cart.'.text.make(),
@@ -91,3 +94,6 @@ class _CartListState extends State<_CartList> {
     );
   }
 }
+
+
+
