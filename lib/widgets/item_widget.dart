@@ -18,7 +18,7 @@ class ItemWidget extends StatelessWidget {
       shape: StadiumBorder(),
       child: ListTile(
         onTap: () {
-          print("${item.name}pressed");
+          
         },
         leading: Image.network(item.image),
         title: Text(item.name),

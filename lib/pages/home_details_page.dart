@@ -24,7 +24,11 @@ class HomeDetailsPage extends StatelessWidget {
                   children: [
                     "\$${catalog.price}".text.bold.xl4.red900.make(),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: "Buying not suppported yet.".text.make(),
+              ));
+                      },
                       child: "Buy".text.color(MyTheme.creamColor).make(),
                       style: ButtonStyle(
                           backgroundColor:
