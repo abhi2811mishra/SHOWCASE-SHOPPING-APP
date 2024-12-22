@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(
         centerTitle: true,
-        title:"Catalog App"
+        title:"Shopping App"
               .text
               .xl5
               .bold
