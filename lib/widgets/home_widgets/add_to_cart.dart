@@ -20,27 +20,34 @@ class AddToCartState extends State<AddToCart> {
   @override
   Widget build(BuildContext context) {
     bool isInCart = _cart.items.contains(widget.catalog);
-    return ElevatedButton(
-        onPressed: () {
-          final _catalog = CatalogModel();
+    return  ElevatedButton(
+  onPressed: () {
+    final _catalog = CatalogModel();
           final _cart = CartModel();
           _cart.catalog = _catalog;
           _cart.add(widget.catalog);
           isInCart = isInCart.toggle();
           setState(() {});
-        },
-        style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all(
-                Theme.of(context).colorScheme.secondary),
-            shape: WidgetStateProperty.all(
-              StadiumBorder(),
-            )),
-        child: isInCart
-            ? const Icon(
-                Icons.done,
-                color: Colors.white,
-              )
-            : Icon(CupertinoIcons.cart_badge_plus, color: Colors.white),
-            );
+
+    
+  },
+  style: ButtonStyle(
+    backgroundColor: WidgetStateProperty.all(
+        Theme.of(context).colorScheme.secondary),
+    shape: WidgetStateProperty.all(
+       StadiumBorder(),
+    ),
+  ),
+  child:isInCart
+      ? const Icon(
+          Icons.done,
+          color: Colors.white,
+        )
+      : const Icon(
+          CupertinoIcons.cart_badge_plus,
+          color: Colors.white,
+        ),
+);
+
   }
 }

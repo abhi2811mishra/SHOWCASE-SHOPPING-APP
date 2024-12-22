@@ -44,69 +44,71 @@ class CatalogList extends StatelessWidget {
 class CatalogItem extends StatelessWidget {
   final Item catalog;
 
-  const CatalogItem({Key? key, required this.catalog})
-      : assert(catalog != null),
-        super(key: key);
+  const CatalogItem({Key? key, required this.catalog}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return VxBox(
       child: Row(
         children: [
+          // Catalog Image with Hero Animation
           Hero(
             tag: Key(catalog.id.toString()),
-            child: CatalogImage(
-              image: catalog.image,
-            ),
+            child: CatalogImage(image: catalog.image),
           ),
+          // Catalog Item Details
           Expanded(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              catalog.name.text.lg
-                  .color(Theme.of(context).colorScheme.primary)
-                  .bold
-                  .xl
-                  .make(),
-              catalog.description.text
-                  .color(Theme.of(context).colorScheme.primary)
-                  .textStyle(context.captionStyle)
-                  .make(),
-              10.heightBox,
-              OverflowBar(
-                alignment: MainAxisAlignment.spaceBetween,
-                spacing: 5.0,
-                children: [
-                  "\$${catalog.price}"
-                      .text
-                      .color(Theme.of(context).colorScheme.secondary)
-                      .bold
-                      .xl
-                      .make(),
-                  ElevatedButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: "Buying not suppported yet.".text.make(),
-                      ));
-                    },
-                    style: ButtonStyle(
-                        backgroundColor: WidgetStateProperty.all(
-                            Theme.of(context).colorScheme.secondary),
-                        shape: WidgetStateProperty.all(
-                          StadiumBorder(),
-                        )),
-                    child: "Buy".text.color(Colors.white).make(),
-                  ),
-                  AddToCart(catalog: catalog),
-                ],
-              ).pOnly(right: 8.0)
-            ],
-          ))
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Item Name
+                catalog.name.text.lg
+                    .color(Theme.of(context).colorScheme.primary)
+                    .bold
+                    .xl
+                    .make(),
+                // Item Description
+                catalog.description.text
+                    .color(Theme.of(context).colorScheme.primary)
+                    .textStyle(context.captionStyle)
+                    .make(),
+                10.heightBox,
+                // OverflowBar with Price, AddToCart, and Buy Button
+                OverflowBar(
+                  alignment: MainAxisAlignment.spaceBetween,
+                  spacing: 10.0,
+                  children: [
+                    // Price
+                    "\$${catalog.price}"
+                        .text
+                        .color(Theme.of(context).colorScheme.secondary)
+                        .bold
+                        .xl
+                        .make(),
+                    // Add to Cart Button
+                    AddToCart(catalog: catalog),
+                    // Buy Button
+                    ElevatedButton(
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: "Buying not supported yet.".text.make(),
+                        ));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondary,
+                        shape: const StadiumBorder(),
+                      ),
+                      child: "Buy".text.color(Colors.white).make(),
+                    ),
+                  ],
+                ).pOnly(right: 8.0)
+              ],
+            ),
+          )
         ],
       ),
     ).color(context.cardColor).rounded.square(150).make().py16();
   }
 }
-
-

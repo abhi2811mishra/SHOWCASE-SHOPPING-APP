@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/model/cart.dart';
-import 'package:flutter_catalog/model/catalog.dart';
+import 'package:flutter_catalog/widgets/drawer.dart';
 import 'package:flutter_catalog/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -23,43 +23,42 @@ class CartPage extends StatelessWidget {
           Divider(),
           CartTotal(),
         ],
-      ),
+      ),drawer: MyDrawer(),
     );
   }
 }
 
 class CartTotal extends StatelessWidget {
-  const CartTotal({super.key});
-
   @override
   Widget build(BuildContext context) {
-    final cart = CartModel();
-
+    final _cart = CartModel();
     return SizedBox(
-      height: 100,
+      
+      height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            "\$${cart.totalPrice}", // Reflects the updated total price
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium
-                ?.copyWith(color: Theme.of(context).colorScheme.primary),
-          ),
+         "  \$${_cart.totalPrice}"
+          .text
+          .xl5
+          .color(Theme.of(context).colorScheme.primary)
+          .make(),
+         
+
+
+          30.widthBox,
           ElevatedButton(
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                content: Text("Buying not supported yet."),
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: "Buying not suppported yet.".text.make(),
               ));
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.secondary,
-              shape: const StadiumBorder(),
-              minimumSize: const Size(80, 40),
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(
+                  Theme.of(context).colorScheme.secondary),
             ),
-            child: const Text("Buy", style: TextStyle(color: Colors.white)),
-          ),
+            child: "Buy".text.white.make(),
+          ).wh(80, 80)
         ],
       ),
     );
@@ -73,47 +72,36 @@ class _CartList extends StatefulWidget {
   State<_CartList> createState() => _CartListState();
 }
 
-
 class _CartListState extends State<_CartList> {
-  final  _cart = CartModel();
+  final _cart = CartModel(); // Use the singleton instance
 
   @override
   Widget build(BuildContext context) {
-    return _cart.items.isEmpty
-        ? Center(
-            child: Text(
-              "Nothing to Show.",
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-          )
-        : ListView.builder(
-            itemCount: _cart.items.length,
-            itemBuilder: (context, index) {
-              final item = _cart.items.toList()[index];
-              return ListTile(
-                leading: Icon(Icons.done,
-                    color: Theme.of(context).colorScheme.secondary),
-                trailing: IconButton(
-                  icon: Icon(Icons.remove_circle_outline,
-                      color: Theme.of(context).colorScheme.secondary),
-                  onPressed: () {
-                    setState(() {
-                      _cart.remove(item); // Removes the item and adjusts total
-                    });
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('${item.name} removed from cart.'),
-                    ));
-                  },
-                ),
-                title: Text(
-                  item.name,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge
-                      ?.copyWith(color: Theme.of(context).colorScheme.secondary),
+
+    return _cart.items.isEmpty?"Nothing to Show.".text.xl3.bold.color(Theme.of(context).colorScheme.primary).makeCentered(): ListView.builder(
+      itemCount: _cart.items.toList().length,
+      itemBuilder: (context, index) {
+        final item = _cart.items.toList()[index]; // Convert items to a List for indexing
+        return ListTile(
+          leading: Icon(Icons.done,color: Theme.of(context).colorScheme.secondary,),
+          trailing: IconButton(
+            icon: Icon(Icons.remove_circle_outline,color: Theme.of(context).colorScheme.secondary ,),
+            onPressed: () {
+              setState(() {
+                _cart.remove(item); 
+                setState(() {});// Remove item from cart
+              }
+              );
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: '${item.name} removed from cart.'.text.make(),
                 ),
               );
             },
-          );
+          ),
+          title: item.name.text.color( Theme.of(context).colorScheme.secondary).bold.xl.make(),
+        );
+      },
+    );
   }
 }

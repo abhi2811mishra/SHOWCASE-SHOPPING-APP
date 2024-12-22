@@ -10,86 +10,86 @@ class MyDrawer extends StatelessWidget {
      "https://thumbs.dreamstime.com/b/holding-hands-against-bright-sun-light-rays-nature-landscape-sunset-blue-sky-yellow-burst-flare-birds-silhouettes-flying-169480456.jpg";
 
     return Drawer(
-      child:Container(
-        child: ListView(
+      child:ListView(
+        padding: EdgeInsets.zero,
+            children: [
+      DrawerHeader(
           padding: EdgeInsets.zero,
-      children: [
-        DrawerHeader(
-            padding: EdgeInsets.zero,
-            child: UserAccountsDrawerHeader(
-              margin: EdgeInsets.zero,
-              decoration: BoxDecoration(color: Colors.deepOrangeAccent),
-              accountName: Text("Abhinav Mishra"),
-              accountEmail: Text("abinavmishra61@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(imageurl),
+          child: UserAccountsDrawerHeader(
+            margin: EdgeInsets.zero,
+           decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
               ),
-            )
-            ),
 
-            ListTile(
-              leading: Icon(
-              CupertinoIcons.home,
-              color:Colors.black),
-              title: Text(
-                "Home",
-                style: TextStyle(
-                  color: Colors.deepOrange,
-                ),
-              ),
+            accountName: Text("Abhinav Mishra"),
+            accountEmail: Text("abinavmishra61@gmail.com"),
+            currentAccountPicture: CircleAvatar(
+              backgroundImage: NetworkImage(imageurl),
             ),
+          )
+          ),
+      
+         
 
-             ListTile(
-              leading: Icon(
-              CupertinoIcons.profile_circled,
-              color:Colors.black),
-              title: Text(
-                "Profile",
-                style: TextStyle(
-                  color: Colors.deepOrange,
-                ),
+          ListTile(
+             leading: Icon(CupertinoIcons.home, color: Colors.black),
+              title: Text("Home", style: TextStyle(color: Colors.deepOrange)),
+                 onTap: () {
+                  Navigator.pushNamed(context, '/home'); // Example route
+                    },
+                     ),
+
+      
+           ListTile(
+            leading: Icon(
+            CupertinoIcons.profile_circled,
+            color:Colors.black),
+            title: Text(
+              "Profile",
+              style: TextStyle(
+                color: Colors.deepOrange,
               ),
             ),
-
-             ListTile(
-              leading: Icon(
-              CupertinoIcons.settings_solid,
-              color:Colors.black),
-              title: Text(
-                "Settings",
-                style: TextStyle(
-                  color: Colors.deepOrange,
-                ),
+          ),
+      
+           ListTile(
+            leading: Icon(
+            CupertinoIcons.settings_solid,
+            color:Colors.black),
+            title: Text(
+              "Settings",
+              style: TextStyle(
+                color: Colors.deepOrange,
               ),
             ),
-
-            ListTile(
-              leading: Icon(
-              CupertinoIcons.search_circle,
-              color:Colors.black),
-              title: Text(
-                "Search",
-                style: TextStyle(
-                  color: Colors.deepOrange,
-                ),
+          ),
+      
+          ListTile(
+            leading: Icon(
+            CupertinoIcons.search_circle,
+            color:Colors.black),
+            title: Text(
+              "Search",
+              style: TextStyle(
+                color: Colors.deepOrange,
               ),
             ),
-
-             ListTile(
-              leading: Icon(
-              CupertinoIcons.mail,
-              color:Colors.black),
-              title: Text(
-                "email me",
-                style: TextStyle(
-                  color: Colors.deepOrange,
-                ),
+          ),
+      
+           ListTile(
+            leading: Icon(
+            CupertinoIcons.mail,
+            color:Colors.black),
+            title: Text(
+              "email me",
+              style: TextStyle(
+                color: Colors.deepOrange,
               ),
             ),
-
-      ],
-    )
-    ),
+          ),
+      
+            ],
+          ),
     );
   }
 }

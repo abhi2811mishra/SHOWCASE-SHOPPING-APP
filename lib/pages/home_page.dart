@@ -29,21 +29,26 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> loadData() async {
-    try {
-      final catalogJson = await rootBundle.loadString("assets/files/catalog.json");
-      final decodedData = jsonDecode(catalogJson)["products"];
-      CatalogModel.items = List.from(decodedData).map<Item>((item) => Item.fromMap(item)).toList();
+    final catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+    final decodedData = jsonDecode(catalogJson)["products"];
+    CatalogModel.items = List.from(decodedData).map<Item>((item) => Item.fromMap(item)).toList();
 
-      setState(() {});
-    } catch (e) {
-      print("Error: $e");
-    }
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).canvasColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title:"Catalog App"
+              .text
+              .xl5
+              .bold
+              .color(Theme.of(context).colorScheme.secondary)
+              .make(),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
         backgroundColor: Theme.of(context).colorScheme.secondary,
@@ -66,15 +71,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      drawer: MyDrawer(), // Here is your drawer
     );
   }
 }
-
-
-
-
-
-
-
-
-
